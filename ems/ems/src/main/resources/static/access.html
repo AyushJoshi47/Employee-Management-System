@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Fertilizers Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            line-height: 1.6;
+            background-image: url("https://companieslogo.com/img/orig/NFL.NS-c6748bb2.png?t=1604232066");
+            background-size: 700px;
+            background-position: center 220px;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: forestgreen;
+            border-radius: 50px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+        .Title {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+        .Title img:nth-child(1) {
+            justify-self: start;
+        }
+        .Title img:nth-child(2) {
+            justify-self: end;
+        }
+        .Title img {
+            width: 20%;
+            height: auto;
+            display: block;
+        }
+        .my-button {
+            background-color: forestgreen;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            width: 202px;
+            height: 60px;
+            justify-content: center;
+            border-radius: 20px;
+        }
+        .my-button:hover {
+            background-color: forestgreen;
+            color: white;
+        }
+        .my-button {
+            background-color: white;
+            color: black;
+            border: 2px solid #04aa6d;
+        }
+        .back-button {
+            background-color: forestgreen;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            width: 202px;
+            height: 60px;
+            justify-content: center;
+            border-radius: 20px;
+        }
+        .back-button:hover {
+            background-color: #008cba;
+            color: white;
+        }
+        .back-button {
+            background-color: white;
+            color: black;
+            border: 2px solid #008cba;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        #add-employee-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        #employee-access-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        #admin-login-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        #admin-access-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        #delete-employee-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+        #dashboard {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            height: 65px;
+            margin-bottom: 20px;
+        }
+
+        align {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            min-width: 150px;
+            text-align: right;
+            margin-right: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 5px;
+            font-size: 1em;
+        }
+        h2 {
+            text-align: center;
+        }
+
+        th tr {
+            border: 2px solid #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+        footer {
+            background: #f2f2f2;
+            padding-top: 50px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            padding: 0 15px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer-content {
+            width: 100%;
+            max-width: 33.3%;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .footer-content p {
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+        }
+        .footer-content ul {
+            text-align: center;
+        }
+        .list {
+            padding: 0;
+        }
+        .list li {
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+            color: forestgreen;
+        }
+        .list li::before {
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: forestgreen;
+            transition-duration: 0.5s;
+        }
+        .list li:hover::before {
+            width: 100px;
+        }
+        .social-icons {
+            text-align: center;
+            padding: 0;
+        }
+        .social-icons li {
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i {
+            color: black;
+            font-size: 25px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            color: forestgreen;
+        }
+        .social-icons i:hover {
+            color: forestgreen;
+        }
+        .bottom-bar {
+            background: forestgreen;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar p {
+            color: #343434;
+            margin: 0;
+            font-size: 12px;
+            padding: 7px;
+            font-weight: bold;
+        }
+        .staff {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid forestgreen;
+            border-radius: 20px;
+            background-color: forestgreen;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.8em;
+            color: white;
+            margin-bottom: 20px;
+        }
+        #employee-details {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 2px solid #111111;
+            padding: 8px;
+        }
+
+        th {
+            background-color: forestgreen;
+        }
+
+        #view-employee-section .details h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="Title">
+    <img src="https://seeklogo.com/images/N/national-fertilizers-limited-logo-FD510E092B-seeklogo.com.png" />
+    <img src="https://pbs.twimg.com/profile_images/1700909607730950144/w-PXOPHR_400x400.jpg" />
+</div>
+
+<div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="access.html">Staff Portal</a>
+    <a href="contact.html">Contacts</a>
+    <a href="career.html">Career</a>
+    <a href="directors.html">Executives</a>
+</div>
+
+<div class="staff">
+    Staff Portal
+</div>
+
+<div id="dashboard" class="button" style="text-align: center;">
+    <button class="my-button" onclick="showSection('employee-access-section')">Employee Access</button>
+    <button class="my-button" onclick="showSection('admin-login-section')">Admin Access</button>
+</div>
+
+<div id="employee-access-section" class="center">
+    <h2>Employee Access</h2>
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" name="employeeId" required /><br />
+    <div style="text-align: center;">
+        <button class="my-button" onclick="viewEmployee()">View Employee</button>
+        <button class="back-button" onclick="showSection('dashboard')">Back</button>
+    </div>
+</div>
+
+<div id="admin-login-section" class="center">
+    <h2>Admin Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required /><br />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required /><br />
+    <div style="text-align: center;">
+        <button class="my-button" onclick="adminLogin()">Login</button>
+        <button class="back-button" onclick="showSection('dashboard')">Back</button>
+    </div>
+</div>
+
+<div id="admin-access-section" class="center">
+    <h2>Admin Access</h2>
+    <div style="text-align: center;">
+        <button class="my-button" onclick="showSection('add-employee-section')">Add Employee</button>
+        <button class="my-button" onclick="showSection('delete-employee-section')">Delete Employee</button>
+        <button class="back-button" onclick="showSection('dashboard')">Logout</button>
+    </div>
+</div>
+
+<div id="add-employee-section" class="align">
+    <h2 style="text-align: center;">Add Employee Information</h2>
+    <form id="employeeForm">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required /><br />
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" /><br />
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" name="phone" required /><br />
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required /><br />
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required /><br />
+
+        <label for="maritalstatus">Marital Status:</label>
+        <input type="text" id="maritalstatus" name="maritalstatus" required /><br />
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required /><br />
+
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required /><br />
+
+        <label for="dateofbirth">Date of Birth:</label>
+        <input type="date" id="dateofbirth" name="dateofbirth" required /><br />
+
+        <label for="jobtitle">Job Title:</label>
+        <input type="text" id="jobtitle" name="jobtitle" required /><br />
+
+        <label for="dateofhire">Date of Hire:</label>
+        <input type="date" id="dateofhire" name="dateofhire" required /><br />
+        <div style="text-align: center;">
+            <button class="my-button" type="button" onclick="addEmployee()">Add Employee</button>
+            <button class="back-button" type="button" onclick="showSection('admin-access-section')">Back</button>
+        </div>
+    </form>
+</div>
+
+<div id="delete-employee-section" class="center">
+    <h2>Delete Employee</h2>
+    <label for="deleteEmployeeId">Employee ID:</label>
+    <input type="text" id="deleteEmployeeId" name="deleteEmployeeId" required /><br />
+    <div style="text-align: center;">
+        <button class="my-button" onclick="deleteEmployee()">Delete Employee</button>
+        <button class="back-button" type="button" onclick="showSection('admin-access-section')">Back</button>
+    </div>
+</div>
+
+<div id="view-employee-section" class="view">
+    <h2>Employee Details</h2>
+    <div id="employee-details">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Address</th>
+                <th>Marital Status</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+                <th>Date of Birth</th>
+                <th>Job Title</th>
+                <th>Date of Hire</th>
+            </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+        </table>
+    </div>
+    <div style="text-align: center;">
+        <button class="back-button" onclick="showSection('employee-access-section')">Back</button>
+    </div>
+</div>
+
+<script>
+    const backendUrl = "http://localhost:8080/ems";
+
+    function showSection(sectionId) {
+        const sections = ["dashboard", "employee-access-section", "admin-login-section", "admin-access-section", "add-employee-section", "delete-employee-section", "view-employee-section"];
+        sections.forEach((id) => {
+            document.getElementById(id).style.display = id === sectionId ? "block" : "none";
+        });
+    }
+
+    function adminLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // For simplicity, using hardcoded username and password.
+        if (username === "" && password === "") {
+            showSection("admin-access-section");
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+
+    function addEmployee() {
+        const form = document.getElementById("employeeForm");
+        const formData = new FormData(form);
+        const data = {
+            firstname: formData.get("firstname"),
+            lastname: formData.get("lastname"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            department: formData.get("department"),
+            address: formData.get("address"),
+            maritalstatus: formData.get("maritalstatus"),
+            gender: formData.get("gender"),
+            nationality: formData.get("nationality"),
+            dateofbirth: formData.get("dateofbirth"),
+            jobtitle: formData.get("jobtitle"),
+            dateofhire: formData.get("dateofhire"),
+        };
+
+        fetch(`${backendUrl}/add`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Success:", data);
+                alert("Employee added successfully!");
+                form.reset();
+                showSection("admin-access-section");
+            })
+            .catch((error) => {
+                console.error("Error adding employee:", error);
+                alert("Failed to add employee");
+            });
+    }
+
+    function viewEmployee() {
+    const employeeId = document.getElementById("employeeId").value;
+    if (employeeId) {
+        fetch(`${backendUrl}/${employeeId}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Employee not found");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Fetched Employee Data:", data); // Log the entire data object for debugging
+
+                // Extract and display employee details
+                const employeeTableBody = document.getElementById("employeeTableBody");
+                employeeTableBody.innerHTML = `
+                    <tr>
+                        <td>${data.employeeid || 'N/A'}</td>
+                        <td>${data.firstname || 'N/A'}</td>
+                        <td>${data.lastname || 'N/A'}</td>
+                        <td>${data.email || 'N/A'}</td>
+                        <td>${data.phone || 'N/A'}</td>
+                        <td>${data.department || 'N/A'}</td>
+                        <td>${data.address || 'N/A'}</td>
+                        <td>${data.maritalstatus || 'N/A'}</td>
+                        <td>${data.gender || 'N/A'}</td>
+                        <td>${data.nationality || 'N/A'}</td>
+                        <td>${data.dateofbirth || 'N/A'}</td>
+                        <td>${data.jobtitle || 'N/A'}</td>
+                        <td>${data.dateofhire || 'N/A'}</td>
+                    </tr>`;
+                showSection("view-employee-section");
+            })
+            .catch((error) => {
+                console.error("Error fetching employee:", error);
+                alert("Failed to fetch employee");
+            });
+    } else {
+        alert("Please enter an employee ID");
+    }
+}
+
+
+
+    function deleteEmployee() {
+        const employeeId = document.getElementById("deleteEmployeeId").value;
+        if (employeeId) {
+            fetch(`${backendUrl}/delete?id=${employeeId}`, {
+                method: "DELETE",
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    if (data) {
+                        alert("Employee deleted successfully!");
+                        document.getElementById("deleteEmployeeId").value = "";
+                        showSection("admin-access-section");
+                    } else {
+                        alert("Employee not found");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error deleting employee:", error);
+                    alert("Failed to delete employee");
+                });
+        } else {
+            alert("Please enter an employee ID");
+        }
+    }
+
+    // Show dashboard initially
+    showSection("dashboard");
+</script>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email:adcfv@abc.co.in</p>
+            <p>Phone:+91 415254174</p>
+            <p>Address:Noida (UP)</p>
+        </div>
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+            <ul class="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="access.html">Staff Portal</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="carrer.html">Carrer</a></li>
+                <li><a href="directors.html">Executives</a></li>
+            </ul>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/nationalfertilizers"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://x.com/NFL_Kisan"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@nationalfertilizerslimited6133"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.nationalfertilizers.com/wp-content/themes/NFL/images/linkedin-icon.svg"><i class="fa fa-linkedin"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; This website is Developed and Maintained by Ayush Joshi [ Intern at NFL ]</p>
+    </div>
+</footer>
+</body>
+</html>

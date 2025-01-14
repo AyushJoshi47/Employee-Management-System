@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National Fertilizers Limited</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 15px;
+      line-height: 1.6; /* Reduce line-height slightly for tighter spacing */
+      background-image: url("https://companieslogo.com/img/orig/NFL.NS-c6748bb2.png?t=1604232066");
+      background-size: 700px;
+      background-position: center 220px;
+      background-repeat: no-repeat;
+      background-blend-mode: multiply;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: forestgreen;
+      border-radius: 20px;
+    }
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+      background-color: white;
+      color: black;
+    }
+    .Title {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      margin-left: 20px;
+      padding: 10px;
+    }
+    .Title img:nth-child(1) {
+      justify-self: start;
+    }
+    .Title img:nth-child(2) {
+      justify-self: end;
+    }
+    .Title img {
+      width: 20%;
+      height: auto;
+      display: block;
+    }
+    .notice {
+      border-radius: 20px;
+      border: 1px solid black;
+      padding: 10px;
+      background-color: lightyellow;
+      margin: 20px auto;
+      max-width: 1000px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .notice h1,
+    .notice h2,
+    .notice h4,
+    .notice p {
+      margin: 10px 0; /* Reduce margin between elements */
+    }
+
+    .notice h1 {
+      margin-top: 0; /* Remove top margin */
+    }
+    #application-section {
+      max-width: 600px;
+      margin: 0 auto; /* Centers the form horizontally */
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f2f2f2;
+      height: 60px;
+      margin-bottom: 30px;
+    }
+    #trainee-form {
+      max-width: 600px;
+      margin: 0 auto; /* Centers the form horizontally */
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f2f2f2;
+      margin-bottom: 30px;
+    }
+    #contract-form {
+      max-width: 600px;
+      margin: 0 auto; /* Centers the form horizontally */
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: #f2f2f2;
+      margin-bottom: 30px;
+    }
+    .my-button {
+      background-color: forestgreen; /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      width: 202px;
+      height: 60px;
+      justify-content: center;
+      border-radius: 20px;
+      width: 220px;
+    }
+    .my-button:hover {
+      background-color: forestgreen;
+      color: white;
+    }
+    .my-button {
+      background-color: white;
+      color: black;
+      border: 2px solid #04aa6d;
+    }
+    .back-button {
+      background-color: forestgreen; /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      width: 202px;
+      height: 60px;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    .back-button:hover {
+      background-color: #008cba;
+      color: white;
+    }
+    .back-button {
+      background-color: white;
+      color: black;
+      border: 2px solid #008cba;
+    }
+    .button {
+      display: flex;
+      justify-content: center; /* Center items horizontally */
+      align-items: center; /* Center items vertically */
+      height: 50vh;
+    }
+    label {
+      min-width: 150px; /* Adjust label width as needed */
+      text-align: right;
+      margin-right: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    input {
+      width: 100%; /* Takes up remaining space */
+      height: 40px;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      padding: 5px;
+      font-size: 1em;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      color: black;
+    }
+    footer {
+      background: #f2f2f2;
+      padding-top: 50px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      padding: 0 15px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .footer-content {
+      width: 100%;
+      max-width: 33.3%;
+      margin-bottom: 30px; /* Add space between sections on smaller screens */
+      text-align: center;
+    }
+    h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .footer-content p {
+      width: 190px;
+      margin: auto;
+      padding: 7px;
+    }
+    .footer-content ul {
+      text-align: center;
+    }
+    .list {
+      padding: 0;
+    }
+    .list li {
+      width: auto;
+      text-align: center;
+      list-style-type: none;
+      padding: 7px;
+      position: relative;
+      color: forestgreen;
+    }
+    .list li::before {
+      content: "";
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 100%;
+      width: 0;
+      height: 2px;
+      background: forestgreen;
+      transition-duration: 0.5s;
+    }
+    .list li:hover::before {
+      width: 100px;
+    }
+    .social-icons {
+      text-align: center;
+      padding: 0;
+    }
+    .social-icons li {
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+    }
+    .social-icons i {
+      color: black;
+      font-size: 25px;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      color: forestgreen;
+    }
+    .social-icons i:hover {
+      color: forestgreen;
+    }
+    .bottom-bar {
+      background: forestgreen;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 50px;
+    }
+    .bottom-bar p {
+      color: #343434;
+      margin: 0;
+      font-size: 12px;
+      padding: 7px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="Title">
+  <img src="https://seeklogo.com/images/N/national-fertilizers-limited-logo-FD510E092B-seeklogo.com.png" />
+  <img src="https://pbs.twimg.com/profile_images/1700909607730950144/w-PXOPHR_400x400.jpg" />
+</div>
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="access.html">Staff Portal</a>
+  <a href="contact.html">Contacts</a>
+  <a href="career.html">Career</a>
+  <a href="directors.html">Executives</a>
+</div>
+
+<div class="notice">
+  <h1 style="text-align: center;">NOTICE</h1>
+  <p>
+    National Fertilizers Limited (NFL), a leading Public Sector Undertaking (PSU) under the Department of Fertilizers, Government of India, invites talented individuals to join our dynamic team.
+  </p>
+  <h2>NFL offers you:</h2>
+  <h4>Trainee Program:</h4>
+  <p>
+    Gain practical experience while honing your skills under the guidance of experienced professionals. This program is an excellent opportunity for college students to explore diverse career paths within the fertilizer sector.
+  </p>
+  <h4>Contract Employee Positions:</h4>
+  <p>Contribute your expertise and collaborate with dedicated teams across various departments.</p>
+  <h2>Registration Process:</h2>
+  <p>
+    We understand your time is valuable. Our streamlined online registration portal allows you to submit basic data and contact information. Shortlisted candidates will be contacted directly for the next steps in the selection
+    process.
+  </p>
+</div>
+<div id="application-section" class="button" style="text-align: center;">
+  <button class="my-button" onclick="showSection('trainee-form')">Trinee Registeration Form</button>
+  <button class="my-button" onclick="showSection('contract-form')">Contract Registeration Form</button>
+</div>
+<!-- Trainee Application Form -->
+<div id="trainee-form" style="text-align: center; display: none;">
+  <h1>
+    Apply as Trainee
+  </h1>
+  <form id="trainee-application-form">
+    <label for="trainee-firstname">First Name:</label><br />
+    <input type="text" id="trainee-firstname" name="firstname" required /><br />
+    <label for="trainee-lastname">Last Name:</label><br />
+    <input type="text" id="trainee-lastname" name="lastname" required /><br />
+    <label for="trainee-email">Email:</label><br />
+    <input type="email" id="trainee-email" name="email" required /><br />
+    <label for="trainee-phone">Phone:</label><br />
+    <input type="text" id="trainee-phone" name="phone" required /><br />
+    <button class="my-button" onclick="showSection('application-section')" type="submit">Submit Application</button>
+    <button class="back-button" onclick="showSection('application-section')">Back</button>
+  </form>
+</div>
+<!-- Contract Employee Application Form -->
+<div id="contract-form" style="text-align: center; display: none;">
+  <h1>
+    Apply as Contract Employee
+  </h1>
+  <form id="contract-application-form">
+    <label for="firstname">First Name:</label><br />
+    <input type="text" id="firstname" name="firstname" required /><br />
+    <label for="lastname">Last Name:</label><br />
+    <input type="text" id="lastname" name="lastname" required /><br />
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" required /><br />
+    <label for="phone">Phone:</label><br />
+    <input type="text" id="phone" name="phone" required /><br />
+    <button class="my-button" onclick="showSection('application-section')" type="submit">Submit Application</button>
+    <button class="back-button" onclick="showSection('application-section')">Back</button>
+  </form>
+</div>
+
+<script>
+  function showSection(sectionId) {
+    const sections = ["application-section", "trainee-form", "contract-form"];
+    sections.forEach((id) => {
+      document.getElementById(id).style.display = id === sectionId ? "block" : "none";
+    });
+  }
+
+  document.getElementById("trainee-application-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("/ems/trainee/add", {
+      method: "POST",
+      body: formData,
+    })
+            .then((response) => response.json())
+            .then((data) => {
+              alert("Trainee application submitted successfully!");
+              // Optionally, reset the form after submission
+              this.reset();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Error submitting trainee application. Please try again.");
+            });
+  });
+
+  document.getElementById("contract-application-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("/ems/contract/add", {
+      method: "POST",
+      body: formData,
+    })
+            .then((response) => response.json())
+            .then((data) => {
+              alert("Contract employee application submitted successfully!");
+              // Optionally, reset the form after submission
+              this.reset();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Error submitting contract employee application. Please try again.");
+            });
+  });
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <h3>Contact Us</h3>
+      <p>Email:customercare@nfl.co.in</p>
+      <p>Phone:+91 18001806435</p>
+      <p>Address:A-11,Sector-24,Noida- 201301 (UP)</p>
+    </div>
+    <div class="footer-content">
+      <h3>Quick Links</h3>
+      <ul class="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="access.html">Staff Portal</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+        <li><a href="career.html">Carrer</a></li>
+        <li><a href="directors.html">Executives</a></li>
+      </ul>
+    </div>
+    <div class="footer-content">
+      <h3>Follow Us</h3>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.facebook.com/nationalfertilizers"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://x.com/NFL_Kisan"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@nationalfertilizerslimited6133"><i class="fa fa-youtube"></i></a>
+        </li>
+        <li>
+          <a href="https://www.nationalfertilizers.com/wp-content/themes/NFL/images/linkedin-icon.svg"><i class="fa fa-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <p>&copy; This website is Developed and Maintained by Ayush Joshi [ Intern at NFL ]</p>
+  </div>
+</footer>
+</body>
+</html>

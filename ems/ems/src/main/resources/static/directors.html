@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>National Fertilizers Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            line-height: 1.6;
+            background-image: url("https://companieslogo.com/img/orig/NFL.NS-c6748bb2.png?t=1604232066");
+            background-size: 700px;
+            background-position: center 220px;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: forestgreen;
+            border-radius: 20px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .Title {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .Title img:nth-child(1) {
+            justify-self: start;
+        }
+
+        .Title img:nth-child(2) {
+            justify-self: end;
+        }
+
+        .Title img {
+            width: 20%;
+            height: auto;
+            display: block;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            max-width: 200px;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+        /align-items: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            object-fit: cover;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            margin: 10px 0 5px;
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .board {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid forestgreen;
+            border-radius: 20px;
+            background-color: forestgreen;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.8em;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+        footer {
+            background: #f2f2f2;
+            padding-top: 50px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            padding: 0 15px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .footer-content {
+            width: 100%;
+            max-width: 33.3%; /* Maintain a max width for larger screens */
+            margin-bottom: 30px; /* Add space between sections on smaller screens */
+            text-align: center;
+        }
+        h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .footer-content p {
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+        }
+        .footer-content ul {
+            text-align: center;
+        }
+        .list {
+            padding: 0;
+        }
+        .list li {
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+            color: forestgreen;
+        }
+        .list li::before {
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: forestgreen;
+            transition-duration: 0.5s;
+        }
+        .list li:hover::before {
+            width: 100px;
+        }
+        .social-icons {
+            text-align: center;
+            padding: 0;
+        }
+        .social-icons li {
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social-icons i {
+            color: black;
+            font-size: 25px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            color: forestgreen;
+        }
+        .social-icons i:hover {
+            color: forestgreen;
+        }
+        .bottom-bar {
+            background: forestgreen;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .bottom-bar p {
+            color: #343434;
+            margin: 0;
+            font-size: 12px;
+            padding: 7px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="Title">
+    <img src="https://seeklogo.com/images/N/national-fertilizers-limited-logo-FD510E092B-seeklogo.com.png" />
+    <img src="https://pbs.twimg.com/profile_images/1700909607730950144/w-PXOPHR_400x400.jpg" />
+</div>
+
+<div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="access.html">Staff Portal</a>
+    <a href="contact.html">Contacts</a>
+    <a href="career.html">Career</a>
+    <a href="directors.html">Executives</a>
+</div>
+
+<div class="board">
+    Board Of Directors
+</div>
+
+<div class="cards-container">
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2023/06/CMD-U-Sarvanan.jpeg" alt="CMD U Sarvanan" />
+        <div class="card-content">
+            <h3 class="card-title">Dr. U. Saravanan</h3>
+            <p class="card-description">Chairman and Managing Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Hiranand.jpg" alt="Hiranand" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Hira Nand</h3>
+            <p class="card-description">Director (Finance)</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/34c2obz7.png" alt="Team Member" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Rajan Kanwar</h3>
+            <p class="card-description">Director (Technical)</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/1652615930306.jpg" alt="Team Member" />
+        <div class="card-content">
+            <h3 class="card-title">Smt Neeraja Adidam</h3>
+            <p class="card-description">Government Nominee Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/pratibha.jpg" alt="Pratibha" />
+        <div class="card-content">
+            <h3 class="card-title">Dr. Prathibha Anirudhan</h3>
+            <p class="card-description">Government Nominee Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Poonam_shrama-scaled.jpg" alt="Poonam Sharma" />
+        <div class="card-content">
+            <h3 class="card-title">Dr. Poonam Sharma</h3>
+            <p class="card-description">Non-Official Independent Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Shri-Ritesh-Tiwari.jpg" alt="Shri Ritesh Tiwari" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Ritesh Tiwari</h3>
+            <p class="card-description">Non-Official Independent Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Shri-Kashi-Ram-Godara.jpeg" alt="Shri Kashi Ram Godara" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Kashi Ram Godara</h3>
+            <p class="card-description">Non-Official Independent Director</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Shri-Venkata-Sarvarayudu-Thota.jpg" alt="Shri Venkata Sarvarayudu Thota" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Venkata Sarvarayudu Thota</h3>
+            <p class="card-description">Non-Official Independent Director/p></p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://www.nationalfertilizers.com/wp-content/uploads/2022/12/Shri-Jyoti-Bhramar-Tubid.jpg" alt="Shri Jyoti Bhramar Tubid" />
+        <div class="card-content">
+            <h3 class="card-title">Shri Jyoti Bhramar Tubid</h3>
+            <p class="card-description">Non-Official Independent Director</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email:customercare@nfl.co.in</p>
+            <p>Phone:+91 18001806435</p>
+            <p>Address:A-11,Sector-24,Noida- 201301 (UP)</p>
+        </div>
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+            <ul class="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="access.html">Staff Portal</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="career.html">Carrer</a></li>
+                <li><a href="directors.html">Executives</a></li>
+            </ul>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/nationalfertilizers"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://x.com/NFL_Kisan"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@nationalfertilizerslimited6133"><i class="fa fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.nationalfertilizers.com/wp-content/themes/NFL/images/linkedin-icon.svg"><i class="fa fa-linkedin"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; This website is Developed and Maintained by Ayush Joshi [ Intern at NFL ]</p>
+    </div>
+</footer>
+</body>
+</html>
